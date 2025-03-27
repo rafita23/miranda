@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conciertos Musicales</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+
+    /* Estilos generales */
+/* Estilos para la pantalla de inicio */
+.pantalla-inicio {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #121212;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.pantalla-inicio img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #7b1fa2;
+    margin-bottom: 20px;
+}
+
+.mensaje-troll h1 {
+    color: #7b1fa2;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.mensaje-troll p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+/* Cambiar algunos estilos para que sea más troll */
+#contacto h2 {
+    color: #e91e63;
+}
+
+button {
+    background: #e91e63;
+}
+
+button:hover {
+    background: #f50057;
+}
+
+footer {
+    background: #e91e63;
+}
+</style>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conciertos Musicales</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Pantalla de inicio con foto -->
+    <div id="inicio" class="pantalla-inicio">
+        <img src="rafael.jpeg" alt="Tu Foto" id="foto-inicial">
+        <div class="mensaje-troll">
+            <h1>¡Hola! 😊</h1>
+            <p>¿En serio escaneaste mi QR? 🤔</p>
+            <p>Mejor vamos por un pollo 🍗</p>
+            <p>LLÁMAME +59173895640</p>
+        </div>
+    </div>
+
+    <!-- Contenido principal (oculto inicialmente) -->
+    <div id="contenido-principal" style="display: none;">
+        <header>
+            <h1>Conciertos 2024</h1>
+            <p>Los mejores eventos musicales en tu ciudad</p>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="#proximos">Próximos Conciertos</a></li>
+                <li><a href="#pasados">Eventos Pasados</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <section id="proximos">
+                <h2>Próximos Conciertos</h2>
+                <div class="conciertos-container" id="conciertos-proximos">
+                    <!-- Los conciertos se cargarán con JavaScript -->
+                </div>
+            </section>
+
+            <section id="pasados">
+                <h2>Eventos Pasados</h2>
+                <div class="conciertos-container" id="conciertos-pasados">
+                    <!-- Los conciertos se cargarán con JavaScript -->
+                </div>
+            </section>
+
+            <section id="contacto">
+                <h2>Contacto</h2>
+                <p>¿Quieres invitarme a comer pollo? 🍗 Completa este formulario:</p>
+                <form id="formulario-contacto">
+                    <div class="form-group">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensaje">¿A qué restaurante me invitas? 🐔:</label>
+                        <textarea id="mensaje" rows="4" required></textarea>
+                    </div>
+                    <button type="submit">Enviar invitación</button>
+                </form>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Conciertos Musicales (o mejor dicho, Invítame a Pollo). Todos los derechos reservados.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+<script>
+ // Esperar a que cargue el DOM
+document.addEventListener('DOMContentLoaded', function() {
+    // Ocultar la pantalla de inicio después de 5 segundos
+    setTimeout(function() {
+        document.getElementById('inicio').style.display = 'none';
+        document.getElementById('contenido-principal').style.display = 'block';
+        
+        // Mostrar los conciertos
+        mostrarConciertos();
+    }, 20000); // 5000 milisegundos = 5 segundos
+
+    // Datos de los conciertos (modificados para el troll)
+    const conciertosProximos = [
+        {
+            id: 1,
+            artista: "Pollo Frito Festival",
+            fecha: "Todos los días",
+            lugar: "KFC, McDonald's, etc.",
+            precio: "Invitación gratis 🍗",
+            imagen: "https://images.unsplash.com/photo-1606755456206-b25206bfa433?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=200&q=80"
+        },
+        {
+            id: 2,
+            artista: "Concierto de Alitas BBQ",
+            fecha: "Cuando quieras",
+            lugar: "Tus restaurantes favoritos",
+            precio: "Trae a un amigo (a mí) 🐔",
+            imagen: "https://images.unsplash.com/photo-1569058242253-92a9c755a0ec?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=200&q=80"
+        },
+        {
+            id: 3,
+            artista: "Nuggets Symphony",
+            fecha: "24/7",
+            lugar: "Donde haya pollo",
+            precio: "Acepto todas las invitaciones",
+            imagen: "https://images.unsplash.com/photo-1606755694441-b378f9276851?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=200&q=80"
+        }
+    ];
+
+    const conciertosPasados = [
+        {
+            id: 4,
+            artista: "El día que no comí pollo",
+            fecha: "Nunca",
+            lugar: "No existe tal lugar",
+            precio: "No quiero recordarlo 😢",
+            imagen: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=200&q=80"
+        },
+        {
+            id: 5,
+            artista: "Cuando me invitaron a pollo",
+            fecha: "La mejor fecha",
+            lugar: "El mejor lugar",
+            precio: "Invaluable ❤️",
+            imagen: "https://images.unsplash.com/photo-1562967916-eb82221dfb92?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=200&q=80"
+        }
+    ];
+
+    // Función para crear elementos de concierto
+    function crearElementoConcierto(concierto) {
+        const div = document.createElement('div');
+        div.className = 'concierto';
+        div.innerHTML = `
+            <img src="${concierto.imagen}" alt="${concierto.artista}">
+            <div class="concierto-info">
+                <h3>${concierto.artista}</h3>
+                <p class="fecha">${concierto.fecha}</p>
+                <p>${concierto.lugar}</p>
+                <p class="precio">${concierto.precio}</p>
+                <button onclick="mostrarDetalle(${concierto.id})">¿Me invitas?</button>
+            </div>
+        `;
+        return div;
+    }
+
+    // Función para mostrar los conciertos
+    function mostrarConciertos() {
+        const contenedorProximos = document.getElementById('conciertos-proximos');
+        const contenedorPasados = document.getElementById('conciertos-pasados');
+
+        conciertosProximos.forEach(concierto => {
+            contenedorProximos.appendChild(crearElementoConcierto(concierto));
+        });
+
+        conciertosPasados.forEach(concierto => {
+            contenedorPasados.appendChild(crearElementoConcierto(concierto));
+        });
+    }
+
+    // Función para mostrar detalles del concierto
+    window.mostrarDetalle = function(id) {
+        const todosConciertos = [...conciertosProximos, ...conciertosPasados];
+        const concierto = todosConciertos.find(c => c.id === id);
+        
+        if (concierto) {
+            alert(`¡${concierto.artista}!\n\nFecha: ${concierto.fecha}\nLugar: ${concierto.lugar}\n\n¿Qué esperas para invitarme? 😋`);
+        }
+    }
+
+    // Manejar el formulario de contacto
+    document.getElementById('formulario-contacto').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const nombre = document.getElementById('nombre').value;
+        const email = document.getElementById('email').value;
+        const mensaje = document.getElementById('mensaje').value;
+        
+        // Mensaje troll de confirmación
+        alert(`¡Gracias ${nombre} por tu invitación a ${mensaje}!\n\nTe contactaré pronto a ${email} para coordinar. ¡Prepárate para pagar! 😜`);
+        
+        // Limpiar el formulario
+        this.reset();
+    });
+});
+</script>
